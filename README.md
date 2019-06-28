@@ -95,6 +95,23 @@ git fetch upstream
 git pull upstream branch-to-pull-from
 ```
 
+### Syncing from a Remote Branch
+If you just want to catch up on a particual branch from upstream, this helps you create the branch, update it with the fork, and start development on your own without messing with the upstream remote. 
+
+Assuming the `upstream` remote has been configured in your repo, create a new branch:
+`git checkout -b branch-to-sync`
+
+Note that in the above, `-b` forces the creation of a new branch. If no `-b` is present, and `branch-to-sync` is also the name of the branch on `upstream`, git will automatically create the new branch, but set it to follow `upstream`, hence pushing to it by default. On the new branch, pull from the remote branch you want to sync:
+`git pull upstream upstream branch-to-sync`
+
+You should now have all the commits of the remote in your local branch. Make some changes and commit them:
+`git commit -a -m "Some changes"`
+
+Now push them to your origin:
+`git push origin branch-to-sync`
+
+This will create the branch in `origin`, upload the commit and not mess with `upstream`. 
+
 ## Log
 
 List commits `git log --pretty=oneline`  
