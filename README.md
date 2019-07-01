@@ -104,7 +104,7 @@ Assuming the `upstream` remote has been configured in your repo, create a new br
 
 Note that in the above, `-b` forces the creation of a new branch. If no `-b` is present, and `branch-to-sync` is also the name of the branch on `upstream`, git will automatically create the new branch, but set it to follow `upstream`, hence pushing to it by default. On the new branch, pull from the remote branch you want to sync:
 
-`git pull upstream upstream branch-to-sync`
+`git pull upstream branch-to-sync`
 
 You should now have all the commits of the remote in your local branch. Make some changes and commit them:
 
