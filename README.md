@@ -147,9 +147,13 @@ Merging a branch: go to the target branch and merge from there:
 `git merge branch_to_merge` merge the source branch  
 
 Deleting a branch:  
-`git branch -d your_branch_name` first remove the branch locally  
-`git branch -dr origin/your_branch_name` if that branch was synced with a remote, remove this too  
-`git push origin :your_branch_name` push those changes to origin 
+```
+// delete branch locally
+git branch -d localBranchName
+
+// delete branch remotely
+git push origin --delete remoteBranchName
+```
 
 ## Submodules
 
