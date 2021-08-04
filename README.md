@@ -158,9 +158,9 @@ git push origin --delete remoteBranchName
 Renaming a branch:
 ```
 git checkout old_branch_name
-git branch -m new_branch_name
-git push origin -u new_branch_name
-git push origin --delete old_branch_name
+git branch -m new_branch_name  # renames local branch
+git push origin -u new_branch_name  # pushes new local branch to repo
+git push origin --delete old_branch_name  # removes old branch from repo
 ```
 
 ## Submodules
