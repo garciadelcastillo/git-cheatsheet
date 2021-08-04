@@ -155,6 +155,14 @@ git branch -d localBranchName
 git push origin --delete remoteBranchName
 ```
 
+Renaming a branch:
+```
+git checkout old_branch_name
+git branch -m new_branch_name
+git push origin -u new_branch_name
+git push origin --delete old_branch_name
+```
+
 ## Submodules
 
 Add a submodule w/o path `git submodule add https://github.com/nonoesp/thinker`  
