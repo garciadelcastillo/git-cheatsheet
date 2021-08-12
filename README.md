@@ -180,6 +180,56 @@ Notes on git and terminal commands.
 `alias desktop='cd /Users/nono/Desktop'` Create an alias or shortcut for a command on the terminal  
 
 ---
+## Working with multiple accounts
+
+Based on [this](https://code.tutsplus.com/tutorials/quick-tip-how-to-work-with-github-and-multiple-accounts--net-22574) and [this](https://code.tutsplus.com/tutorials/quick-tip-how-to-work-with-github-and-multiple-accounts--net-22574) tutorials.
+
+You may want to use different git accounts for different projects, like your personal account for personal projects, and a business acount for client work. This can be done by working with your repos using SSH. 
+
+First thing, generate a new ssh key, different from your personal one:
+
+```
+$ ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+
+Remember to name the new file something like `id_ed25519_compnayname`. Add that key to your Github account [following these instructions](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent). 
+
+Create a `config` file in your `~/.ssh/` folder, and pipe the ssh files depending on the host:
+
+```
+# Default GitHub
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519
+
+# Alternate GitHub account for Company
+Host github-companyname
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519_companyname
+```
+
+Once here, company repos can be cloned from the company account by using the ssh clone link but replacing the default `github.com` host with the `github-companyname` one. So, from 
+
+```
+$ git clone git@github.com:username/reponame.git
+```
+
+change it to
+
+```
+$ git clone git@github-companyname:username/reponame.git
+```
+
+At this point, you can push commits to the `company` repo, but they will show up as from your personal account. Remember to change the default user on the `company` repo with your `company` credentials:
+
+```
+$ git config user.name "github-company-username"
+$ git config user.email "myname@company.name"
+```
+
+---
 ## git-ftp
 
 With git-ftp, you can push our commit to an ftp server and git-ftp will only upload the files that have been changed. It is not what Git is intended for, but in a lot of cases it is a really comfortable use.
@@ -215,6 +265,7 @@ First, run the following command to make sure the git-credential-osxkeychain pro
 Then, run the following command—which will store your username and password inside your OS X keychain the next time you log in.
 
 	git config --global credential.helper osxkeychain
+
 
 ---
 ## License
