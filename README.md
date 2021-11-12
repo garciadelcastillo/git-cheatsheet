@@ -142,9 +142,9 @@ Switch to local branch (when is already visible in `git branch`) `git checkout y
 Switch to remote branch (when is not visible in `git branch`) `git checkout -b [branch] [remotename]/[branch]`  
 Clone a specific `branch git clone git@github.com:nonoesp/laravel-authenticate.git --branch 5.2`  
 
-Merging a branch: go to the target branch and merge from there:
-`git checkout master` first go to the branch to merge onto  
-`git merge branch_to_merge` merge the source branch  
+Merging a branch, go to the target branch and merge from there:
+- First go to the branch to merge onto: `git checkout master`
+- Merge the source branch into current: `git merge branch_to_merge`   
 
 Deleting a branch:  
 ```
