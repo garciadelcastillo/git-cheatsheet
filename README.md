@@ -144,28 +144,28 @@ Clone a specific `branch git clone git@github.com:nonoesp/laravel-authenticate.g
 
 Merging a branch, go to the target branch and merge from there:
 ```
-# First go to the branch to merge onto
-$ git checkout master
+// First go to the branch to merge onto
+git checkout master
 
-# Merge the source branch into current
-$ git merge branch_to_merge
+// Merge the source branch into current
+git merge branch_to_merge
 ```
 
 Deleting a branch:  
 ```
-# delete branch locally
-$ git branch -d localBranchName
+// delete branch locally
+git branch -d localBranchName
 
-# delete branch remotely
-$ git push origin --delete remoteBranchName
+// delete branch remotely
+git push origin --delete remoteBranchName
 ```
 
 Renaming a branch:
 ```
-$ git checkout old_branch_name
-$ git branch -m new_branch_name  # renames local branch
-$ git push origin -u new_branch_name  # pushes new local branch to repo
-$ git push origin --delete old_branch_name  # removes old branch from repo
+git checkout old_branch_name
+git branch -m new_branch_name  # renames local branch
+git push origin -u new_branch_name  # pushes new local branch to repo
+git push origin --delete old_branch_name  # removes old branch from repo
 ```
 
 ## Submodules
