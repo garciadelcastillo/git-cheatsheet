@@ -44,7 +44,16 @@ When you have done `git add --all`, for instance, all your changes would be sent
 `git stash apply [stash@{x}]` (`stash@{0}` by default) applies the changes on stash keeping the stash@{x}  
 `git stash pop [stash@{x}]` (`stash@{0}` by default) applies the changes on stash popping the stash@{x}
 
-## Undo Last Commits
+## Undo Changes
+
+### On a single file
+If the changes were not staged, this will undo changes on a file (warning, no redo here):
+
+`git checkout -- filename`
+
+Use `--` to avoid confusions with branch names.
+
+### Full commits
 
 These two strategies can be used to remove commits with their file changes or commits but keeping their file changes, but you won't be able to push to the same branch as there will be *non-forward changes.* You can get around by creating a new branch `git checkout -b new-branch-name`.
 
