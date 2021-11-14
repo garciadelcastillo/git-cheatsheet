@@ -53,6 +53,12 @@ If the changes were not staged, this will undo changes on a file (warning, no re
 
 Use `--` to avoid confusions with branch names.
 
+### All current files
+
+The following will discard (unstaged) changes to all files in the repo.
+
+` git checkout .`
+
 ### Full commits
 
 These two strategies can be used to remove commits with their file changes or commits but keeping their file changes, but you won't be able to push to the same branch as there will be *non-forward changes.* You can get around by creating a new branch `git checkout -b new-branch-name`.
