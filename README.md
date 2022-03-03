@@ -46,6 +46,16 @@ When you have done `git add --all`, for instance, all your changes would be sent
 
 ## Undo Changes
 
+### Unstaging
+
+To unstage all files but keep their changes:
+
+`git reset`
+
+To unstage a specific file and keep its changes:
+
+`git reset -- path\to\file\name.ext`
+
 ### On a single file
 If the changes were not staged, this will undo changes on a file (warning, no redo here):
 
