@@ -44,6 +44,14 @@ When you have done `git add --all`, for instance, all your changes would be sent
 `git stash apply [stash@{x}]` (`stash@{0}` by default) applies the changes on stash keeping the stash@{x}  
 `git stash pop [stash@{x}]` (`stash@{0}` by default) applies the changes on stash popping the stash@{x}
 
+## Revert to previous commit
+
+If you want to check the state of your code at a previous state, simply checkout into the commit hash:
+
+`git checkout 98c95b26`
+
+This will leave you in a detached HEAD state. To go back to normal, just checkout into your taget branch. 
+
 ## Undo Changes
 
 ### Unstaging
