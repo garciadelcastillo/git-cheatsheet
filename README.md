@@ -304,6 +304,12 @@ Then, run the following command—which will store your username and password in
 
 	git config --global credential.helper osxkeychain
 
+## Git check-ignore
+
+To figure out why a file is ignored, and the rule that applies:
+
+	git check-ignore -v filename.ext
+
 
 ---
 ## License
