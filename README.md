@@ -206,6 +206,12 @@ git push origin --delete old_branch_name  # removes old branch from repo
 Add a submodule w/o path `git submodule add https://github.com/nonoesp/thinker`  
 Add a submodule w/ path `git submodule add https://github.com/nonoesp/thinker relative/path/for/submodule`  
 
+## Search
+
+You can search the commit where a line of code changed:
+
+    git log -S "code to search for"
+
 ## Downloads
 
 * [WIN](https://git-scm.com/download/win)
